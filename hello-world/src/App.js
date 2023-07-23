@@ -2,11 +2,13 @@ import "./App.css";
 import { Greet } from "./components/Greet";
 import Welcome from "./components/Welcome";
 import Hello from "./components/Hello";
+import Msg from "./components/Msg";
 
 function App() {
   return (
     <div className="App">
-      <Greet name="Bruce" heroName="Batman">
+      <Msg />
+      {/* <Greet name="Bruce" heroName="Batman">
         <p>This is Childern Props</p>
       </Greet>
       <Greet name="Clark" heroName="Superman">
@@ -14,8 +16,8 @@ function App() {
       </Greet>
       <Greet name="Diana" heroName="Wonder Woman">
         Diana
-      </Greet>
-      <Welcome name="Bruce" heroName="Batman">
+      </Greet> */}
+      {/* <Welcome name="Bruce" heroName="Batman">
         <p>This is Childern Props</p>
       </Welcome>
       <Welcome name="Clark" heroName="Superman">
@@ -23,7 +25,7 @@ function App() {
       </Welcome>
       <Welcome name="Diana" heroName="Wonder Woman">
         Diana
-      </Welcome>
+      </Welcome> */}
       {/* <Hello /> */}
     </div>
   );
