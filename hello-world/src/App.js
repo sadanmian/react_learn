@@ -3,11 +3,13 @@ import { Greet } from "./components/Greet";
 import Welcome from "./components/Welcome";
 import Hello from "./components/Hello";
 import Msg from "./components/Msg";
+import Counter from "./components/Counter";
 
 function App() {
   return (
     <div className="App">
-      <Msg />
+      <Counter />
+      {/* <Msg /> */}
       {/* <Greet name="Bruce" heroName="Batman">
         <p>This is Childern Props</p>
       </Greet>
