@@ -6,12 +6,14 @@ import Msg from "./components/Msg";
 import Counter from "./components/Counter";
 import FunctionClick from "./components/FunctionClick";
 import ClassClick from "./components/ClassClick";
+import EventBind from "./components/EventBind";
 
 function App() {
   return (
     <div className="App">
-      <FunctionClick />
-      <ClassClick />
+      <EventBind />
+      {/* <FunctionClick /> */}
+      {/* <ClassClick /> */}
       {/* <Counter /> */}
       {/* <Msg /> */}
       {/* <Greet name="Bruce" heroName="Batman">
