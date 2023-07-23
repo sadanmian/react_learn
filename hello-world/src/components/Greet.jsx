@@ -6,14 +6,12 @@ import React from "react";
 //     )
 // }
 
-export const Greet = (props) => {
-  console.log(props);
+export const Greet = ({ name, heroName }) => {
   return (
     <div>
       <h1>
-        Hello {props.name} {props.heroName}
+        Hello {name} {heroName}
       </h1>
-      {props.children}
     </div>
   );
 };

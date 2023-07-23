@@ -8,24 +8,24 @@ import Counter from "./components/Counter";
 function App() {
   return (
     <div className="App">
-      <Counter />
+      {/* <Counter /> */}
       {/* <Msg /> */}
       {/* <Greet name="Bruce" heroName="Batman">
         <p>This is Childern Props</p>
-      </Greet>
-      <Greet name="Clark" heroName="Superman">
+      </Greet> */}
+      {/* <Greet name="Clark" heroName="Superman">
         <button>This is Button</button>
-      </Greet>
-      <Greet name="Diana" heroName="Wonder Woman">
+      </Greet> */}
+      {/* <Greet name="Diana" heroName="Wonder Woman">
         Diana
       </Greet> */}
-      {/* <Welcome name="Bruce" heroName="Batman">
-        <p>This is Childern Props</p>
+      <Welcome name="Bruce" heroName="Batman">
+        {/* <p>This is Childern Props</p> */}
       </Welcome>
-      <Welcome name="Clark" heroName="Superman">
+      {/* <Welcome name="Clark" heroName="Superman">
         <button>This is Button</button>
-      </Welcome>
-      <Welcome name="Diana" heroName="Wonder Woman">
+      </Welcome> */}
+      {/* <Welcome name="Diana" heroName="Wonder Woman">
         Diana
       </Welcome> */}
       {/* <Hello /> */}
