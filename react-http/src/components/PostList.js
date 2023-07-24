@@ -20,7 +20,7 @@ class PostList extends Component {
         });
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         this.setState({
           errorMsg: "Error Retreiving Data",
         });
@@ -31,7 +31,16 @@ class PostList extends Component {
     return (
       <div>
         List of Post
-        {post.length ? post.map((e) => <div key={e.id}>{e.title}</div>) : null}
+        {post.length
+          ? post.map((e) => (
+              <div key={e.id}>
+                <h1>
+                  {e.id}. {e.title}
+                </h1>
+                <span>{e.body}</span>
+              </div>
+            ))
+          : null}
         {errorMsg ? <div>{errorMsg}</div> : null}
       </div>
     );
