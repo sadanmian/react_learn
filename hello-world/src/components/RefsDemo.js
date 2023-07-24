@@ -5,18 +5,18 @@ class RefsDemo extends Component {
     super(props);
 
     this.inputRef = React.createRef();
-    this.callBackRef = null;
-    this.setCallBackRef = (element) => {
-      this.callBackRef = element;
-    };
+    // this.callBackRef = null;
+    // this.setCallBackRef = (element) => {
+    //   this.callBackRef = element;
+    // };
   }
 
   componentDidMount() {
-    // this.inputRef.current.focus();
-    // console.log(this.inputRef);
-    if (this.callBackRef) {
-        this.callBackRef.focus()
-    }
+    this.inputRef.current.focus();
+    console.log(this.inputRef);
+    // if (this.callBackRef) {
+    //     this.callBackRef.focus()
+    // }
   }
 
   clickHandler = () => {
@@ -26,7 +26,7 @@ class RefsDemo extends Component {
     return (
       <div>
         <input type="text" ref={this.inputRef} />
-        <input type="text" ref={this.setCallBackRef} />
+        {/* <input type="text" ref={this.setCallBackRef} /> */}
         <button onClick={this.clickHandler}>Click</button>
       </div>
     );
