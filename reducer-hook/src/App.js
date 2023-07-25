@@ -7,49 +7,53 @@ import CounterThree from "./component/CounterThree";
 import ComponentA from "./component/ComponentA";
 import ComponentB from "./component/ComponentB";
 import ComponentC from "./component/ComponentC";
+import DataFetchingOne from "./component/DataFetchingOne";
 
-export const CountContext = React.createContext();
+// export const CountContext = React.createContext();
 
-const intialState = 0;
-const reducer = (state, action) => {
-  switch (action) {
-    case "increment":
-      return state + 1;
-      break;
-    case "decrement":
-      return state - 1;
-      break;
-    case "reset":
-      return intialState;
-      break;
+// const intialState = 0;
+// const reducer = (state, action) => {
+//   switch (action) {
+//     case "increment":
+//       return state + 1;
+//       break;
+//     case "decrement":
+//       return state - 1;
+//       break;
+//     case "reset":
+//       return intialState;
+//       break;
 
-    default:
-      return state;
-      break;
-  }
-};
+//     default:
+//       return state;
+//       break;
+//   }
+// };
 
 function App() {
-  const [count, dispatch] = useReducer(reducer, intialState);
+  // const [count, dispatch] = useReducer(reducer, intialState);
   return (
-    <>
-      <CountContext.Provider
-        value={{
-          countState: count,
-          countDispatch: dispatch,
-        }}
-      >
-        <div className="App">
-          Count - {count}
-          <ComponentA />
-          <ComponentB />
-          <ComponentC />
-        </div>
-      </CountContext.Provider>
-      {/* <CounterThree /> */}
-      {/* <CounterTwo /> */}
-      {/* <CounterOne /> */}
-    </>
+    <div>
+      <DataFetchingOne />
+    </div>
+    // <>
+    //   <CountContext.Provider
+    //     value={{
+    //       countState: count,
+    //       countDispatch: dispatch,
+    //     }}
+    //   >
+    //     <div className="App">
+    //       Count - {count}
+    //       <ComponentA />
+    //       <ComponentB />
+    //       <ComponentC />
+    //     </div>
+    //   </CountContext.Provider>
+    //   {/* <CounterThree /> */}
+    //   {/* <CounterTwo /> */}
+    //   {/* <CounterOne /> */}
+    // </>
   );
 }
 
