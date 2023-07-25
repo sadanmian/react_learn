@@ -8,6 +8,7 @@ import ComponentA from "./component/ComponentA";
 import ComponentB from "./component/ComponentB";
 import ComponentC from "./component/ComponentC";
 import DataFetchingOne from "./component/DataFetchingOne";
+import DataFetchingTwo from "./component/DataFetchingTwo";
 
 // export const CountContext = React.createContext();
 
@@ -34,7 +35,8 @@ function App() {
   // const [count, dispatch] = useReducer(reducer, intialState);
   return (
     <div>
-      <DataFetchingOne />
+      <DataFetchingTwo />
+      {/* <DataFetchingOne /> */}
     </div>
     // <>
     //   <CountContext.Provider
