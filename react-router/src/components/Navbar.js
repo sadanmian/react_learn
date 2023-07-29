@@ -1,12 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const navLinkStyles = ({ isActive }) => {
+    return {
+      fontWeight: isActive ? "bold" : "normal",
+      textDecoration: isActive ? "none" : "uderline",
+    };
+  };
   return (
     <div>
       <nav>
-        <Link to={"/"}>Home Icon</Link>
-        <Link to={"/about"}>About Icon</Link>
+        <NavLink style={navLinkStyles} to={"/"}>
+          Home Icon
+        </NavLink>
+        <NavLink style={navLinkStyles} to={"/about"}>
+          About Icon
+        </NavLink>
       </nav>
     </div>
   );
