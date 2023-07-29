@@ -17,6 +17,9 @@ const Navbar = () => {
         <NavLink style={navLinkStyles} to={"/about"}>
           About Icon
         </NavLink>
+        <NavLink style={navLinkStyles} to={"/products"}>
+          Products
+        </NavLink>
       </nav>
     </div>
   );
