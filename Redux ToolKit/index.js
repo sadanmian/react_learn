@@ -3,11 +3,19 @@ const createStore = redux.createStore;
 
 // Action
 const CAKE_ORDERED = "CAKE_ORDERED";
+const CAKE_RESTOCKED = "CAKE_RESTOCKED";
 // Action creater
 const orderCake = () => {
   return {
     type: CAKE_ORDERED,
-    quantity: 1,
+    payload: 1,
+  };
+};
+
+const restockCake = (qty = 1) => {
+  return {
+    type: CAKE_RESTOCKED,
+    payload: qty,
   };
 };
 
@@ -24,6 +32,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         numOfCakes: state.numOfCakes - 1,
       };
+    case CAKE_RESTOCKED:
+      return {
+        ...state,
+        numOfCakes: state.numOfCakes + action.payload,
+      };
 
     default:
       return state;
@@ -34,15 +47,20 @@ const reducer = (state = initialState, action) => {
 
 //1 Hold Application state
 const store = createStore(reducer);
+
 //2 Allows access to state via getState()
 console.log("Initial State", store.getState());
+
 //4 Registers listeners via subscribe(listener)
 const unsubscribe = store.subscribe(() =>
   console.log("Updated State", store.getState())
 );
+
 //3 Allows state to be updated via dispatch(action)
 store.dispatch(orderCake());
 store.dispatch(orderCake());
 store.dispatch(orderCake());
+store.dispatch(restockCake(3));
+
 //4 Handles unregistering of listeners via the function returned by subscribe(listener)
 unsubscribe();
