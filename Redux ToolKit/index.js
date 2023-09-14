@@ -1,5 +1,6 @@
 const redux = require("redux");
 const createStore = redux.createStore;
+const bindActionCreators = redux.bindActionCreators;
 
 // Action
 const CAKE_ORDERED = "CAKE_ORDERED";
@@ -57,10 +58,21 @@ const unsubscribe = store.subscribe(() =>
 );
 
 //3 Allows state to be updated via dispatch(action)
-store.dispatch(orderCake());
-store.dispatch(orderCake());
-store.dispatch(orderCake());
-store.dispatch(restockCake(3));
+// store.dispatch(orderCake());
+// store.dispatch(orderCake());
+// store.dispatch(orderCake());
+// store.dispatch(restockCake(3));
+const actions = bindActionCreators(
+  {
+    orderCake,
+    restockCake,
+  },
+  store.dispatch
+);
+actions.orderCake();
+actions.orderCake();
+actions.orderCake();
+actions.restockCake(3);
 
 //4 Handles unregistering of listeners via the function returned by subscribe(listener)
 unsubscribe();
