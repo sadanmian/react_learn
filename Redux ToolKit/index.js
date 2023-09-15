@@ -2,6 +2,10 @@ const redux = require("redux");
 const createStore = redux.createStore;
 const bindActionCreators = redux.bindActionCreators;
 const combineReducers = redux.combineReducers;
+const applyMiddleware = redux.applyMiddleware;
+
+const reduxLogger = require("redux-logger");
+const logger = reduxLogger.createLogger();
 
 // Initial State
 // const initialState = {
@@ -93,15 +97,13 @@ const rootReducer = combineReducers({
 // Redux store
 
 //1 Hold Application state
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 //2 Allows access to state via getState()
 console.log("Initial State", store.getState());
 
 //4 Registers listeners via subscribe(listener)
-const unsubscribe = store.subscribe(() =>
-  console.log("Updated State", store.getState())
-);
+const unsubscribe = store.subscribe(() => {});
 
 //3 Allows state to be updated via dispatch(action)
 // store.dispatch(orderCake());
