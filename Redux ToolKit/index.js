@@ -2,13 +2,29 @@ const redux = require("redux");
 const createStore = redux.createStore;
 const bindActionCreators = redux.bindActionCreators;
 
+// Initial State
+const initialState = {
+  numOfCakes: 10,
+  numOfIceCream: 20,
+};
+
 // Action
 const CAKE_ORDERED = "CAKE_ORDERED";
 const CAKE_RESTOCKED = "CAKE_RESTOCKED";
+const ICE_ORDERED = "ICE_ORDERED";
+const ICE_RESTOCKED = "ICE_RESTOCKED";
+
 // Action creater
 const orderCake = () => {
   return {
     type: CAKE_ORDERED,
+    payload: 1,
+  };
+};
+
+const orderIce = () => {
+  return {
+    type: ICE_ORDERED,
     payload: 1,
   };
 };
@@ -19,10 +35,11 @@ const restockCake = (qty = 1) => {
     payload: qty,
   };
 };
-
-// Initial State
-const initialState = {
-  numOfCakes: 10,
+const restockIce = (qty = 1) => {
+  return {
+    type: ICE_RESTOCKED,
+    payload: qty,
+  };
 };
 
 // Reducer
@@ -37,6 +54,16 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         numOfCakes: state.numOfCakes + action.payload,
+      };
+    case ICE_ORDERED:
+      return {
+        ...state,
+        numOfIceCream: state.numOfIceCream - 1,
+      };
+    case ICE_RESTOCKED:
+      return {
+        ...state,
+        numOfIceCream: state.numOfIceCream + action.payload,
       };
 
     default:
@@ -66,13 +93,19 @@ const actions = bindActionCreators(
   {
     orderCake,
     restockCake,
+    orderIce,
+    restockIce,
   },
   store.dispatch
 );
 actions.orderCake();
 actions.orderCake();
 actions.orderCake();
+actions.orderIce();
+actions.orderIce();
+actions.orderIce();
 actions.restockCake(3);
+actions.restockIce(3);
 
 //4 Handles unregistering of listeners via the function returned by subscribe(listener)
 unsubscribe();
